@@ -1,0 +1,18 @@
+.rating {
+  display: flex;
+  flex-direction: row;
+  font-size: 28px;
+  margin: 20px 0 24px 0;
+  @media (max-width: 768px) {
+    margin: 5px 0 10px 0;
+    font-size: 16px;
+  }
+  /*  &-item {
+  } */
+  &--true {
+    color: #ff6060;
+  }
+  &--false {
+    color: lightgray;
+  }
+}

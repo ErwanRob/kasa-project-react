@@ -1,0 +1,103 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 68px;
+  padding: 0px 100px 0px 100px;
+  box-sizing: border-box;
+  @media (max-width: 768px) {
+    height: 45px;
+    padding: 0px 20px 0px 20px;
+  }
+  &__logo {
+    width: 210px;
+    height: 68px;
+    @media (max-width: 768px) {
+      height: 45px;
+      width: 145px;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    height: 34px;
+    @media (max-width: 768px) {
+      gap: 25px;
+    }
+    &-item {
+      position: relative;
+      text-decoration-line: none;
+      color: #ff6060;
+      text-align: right;
+      font-family: Montserrat;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 142.6%; /* 34.224px */
+      @media (max-width: 768px) {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+      &::after {
+        border-radius: 20px;
+        background-color: #ff9696c4;
+        position: absolute;
+        content: "";
+        height: 1px;
+        top: 40px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        width: 0%;
+        -o-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+        @media (max-width: 768px) {
+          top: 20px;
+        }
+      }
+
+      &:hover::after {
+        width: 100%;
+        background-color: #ff6060;
+        height: 3px;
+      }
+    }
+  }
+}
+
+.activeNavItem {
+  position: relative;
+  text-decoration-line: none;
+  color: #ff6060;
+  text-align: right;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 142.6%; /* 34.224px */
+  &::after {
+    border-radius: 20px;
+    background-color: #ff9696c4;
+    position: absolute;
+    content: "";
+    height: 3px;
+    top: 40px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    -o-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    @media (max-width: 768px) {
+      top: 20px;
+    }
+  }
+}
