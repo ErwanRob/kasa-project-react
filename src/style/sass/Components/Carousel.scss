@@ -1,3 +1,5 @@
+$transition-duration: 500ms;
+
 .carousel {
   position: relative;
   display: flex;
@@ -5,16 +7,21 @@
   align-items: center;
   width: 100%;
   height: 415px;
+  overflow: hidden;
   @media (max-width: 768px) {
     height: 255px;
   }
   &__item {
-    display: none;
+    display: flex;
+    position: absolute;
     width: 100%;
     height: 415px;
     object-fit: cover;
+    //-- Transition with opacity Only
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity $transition-duration ease-in-out;
+    //-- Transition with slide
+    /*  animation: carouselSlideOut $transition-duration 50ms ease-in forwards; */
     @media (max-width: 768px) {
       height: 255px;
     }
@@ -43,9 +50,59 @@
       right: 0px;
     }
   }
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(35, 37, 35, 0.2);
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    border-radius: 10px;
+    padding: 10px;
+    bottom: 5%;
+    color: #fff;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 142.6%; /* 25.668px */
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 }
 
 .carousel__item.active {
   display: flex;
+  //-- Transition with opacity Only
   opacity: 1;
+  transition: opacity $transition-duration ease-in-out;
+  //-- Transition with slide
+  /* animation: carouselSlide $transition-duration ease-out forwards; */
 }
+
+//-- keyframes for Transition with slide
+/* @keyframes carouselSlide {
+  0% {
+    transform: translateX(2000px);
+  }
+  50% {
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes carouselSlideOut {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+ */

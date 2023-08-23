@@ -41,6 +41,9 @@ function ImageCarousel({ images }) {
           className="carousel__nav-arrowright"
         />
       </div>
+      <div className="carousel__count">
+        {activeIndex + 1} <span>/</span> {images.length}
+      </div>
     </div>
   );
 }
