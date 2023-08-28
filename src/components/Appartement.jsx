@@ -6,11 +6,11 @@ import ApartmentDetails from "./AppartementDetails";
 import apartmentsData from "../datas/appartList.json";
 
 function Appartement() {
-  const { id } = useParams(); // Recupération de l'id dans l'URL parce que les autre solution me soul
+  const { id } = useParams(); // Recupération de l'id dans l'URL
   const apartment = apartmentsData.find((apartment) => apartment.id === id);
 
   if (!apartment) {
-    return <Navigate to="/*" />; /*useNavigate not working for some reason*/
+    return <Navigate to="/*" />;
   }
 
   return (

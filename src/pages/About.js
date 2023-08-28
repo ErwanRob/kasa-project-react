@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
@@ -8,7 +7,7 @@ import bannerImgAbout from "../assets/imgOri2.jpg";
 import ValueList from "../datas/ValueList.json";
 
 /* les infobox ne seront pas ici ! Mais dans list infobox*/
-const About = () => {
+function About() {
     return (
         <div className='about'>
             <Header />

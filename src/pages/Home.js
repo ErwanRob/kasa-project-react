@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../style/css/style.css';
 import Header from '../components/Header'
 import Banner from '../components/Banner'
